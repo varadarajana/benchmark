@@ -3,6 +3,12 @@ cmake_minimum_required (VERSION 3.13...3.22)
 
 project (benchmark VERSION 1.9.1 LANGUAGES CXX)
 
+add_definitions(-g -std=c++17)
+
+set(CMAKE_C_COMPILER "/usr/lib/llvm-14/bin/clang" CACHE string "clang compiler" FORCE)
+set(CMAKE_CXX_COMPILER "/usr/lib/llvm-14/bin/clang++" CACHE string "clang++ compiler" FORCE)
+
+
 option(BENCHMARK_ENABLE_TESTING "Enable testing of the benchmark library." ON)
 option(BENCHMARK_ENABLE_EXCEPTIONS "Enable the use of exceptions in the benchmark library." ON)
 option(BENCHMARK_ENABLE_LTO "Enable link time optimisation of the benchmark library." OFF)
